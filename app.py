@@ -220,7 +220,7 @@ def generate_interview_guide(leadership_text, resume_text, language):
 
 # --- Streamlit UI ---
 st.set_page_config(page_title="리더십 원칙 기반 인터뷰 가이드", layout="wide")
-st.title("📝 리더십 원칙 기반 인터뷰 가이드 생성기")
+st.title("🚀 리더십 원칙 기반 인터뷰 가이드 생성기")
 
 st.markdown(
     "리더십 원칙과 이력서를 기반으로, 면접관이 바로 쓸 수 있는 "
@@ -256,7 +256,7 @@ with col2:
 
 st.divider()
 
-if st.button("🚀 인터뷰 가이드 생성하기", type="secondary"):
+if st.button("📄 인터뷰 가이드 생성하기", type="primary"):
     if not leadership_text.strip():
         st.error("리더십 원칙을 입력해주세요.")
     elif not resume_file:
