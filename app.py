@@ -101,7 +101,7 @@ def generate_interview_guide(leadership_text, resume_text, language):
           - 주의할 Red flag:
             - ...
 
-        각 리더십 원칙마다 2~3개의 질문을 작성하세요.
+        각 리더십 원칙마다 2개의 질문을 작성하세요.
         """
     else:  # English
         lang_instruction = """
@@ -190,7 +190,7 @@ def generate_interview_guide(leadership_text, resume_text, language):
   - 이력서 관련 내용:
     - ...
 
-각 리더십 원칙마다 2~3개의 고난도 질문을 생성하세요.
+각 리더십 원칙마다 2개의 고난도 질문을 생성하세요.
 
 
     {lang_instruction}
