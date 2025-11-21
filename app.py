@@ -256,7 +256,7 @@ with col2:
 
 st.divider()
 
-if st.button("🚀 인터뷰 가이드 생성하기", type="primary"):
+if st.button("🚀 인터뷰 가이드 생성하기", type="secondary"):
     if not leadership_text.strip():
         st.error("리더십 원칙을 입력해주세요.")
     elif not resume_file:
