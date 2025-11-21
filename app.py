@@ -206,81 +206,75 @@ def generate_interview_guide(leadership_text, resume_text, language):
 {resume_text}
 """
 
-    response = client.chat.completions.create(
+    # 스트리밍 호출
+    return client.chat.completions.create(
         model="gpt-4.1",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
-        temperature=0.3,
+        temperature=0.35,
+        stream=True,
     )
 
-    content = response.choices[0].message.content
-    return content
 
 # --- Streamlit UI ---
 st.set_page_config(page_title="리더십 원칙 기반 인터뷰 가이드", layout="wide")
-st.title("📝 리더십 원칙 기반 인터뷰 가이드 생성기")
-
-st.markdown(
-    "리더십 원칙과 이력서를 기반으로, 면접관이 바로 쓸 수 있는 "
-    "**리더십별 인터뷰 질문 & 확인 포인트**를 자동 생성합니다."
-)
+st.title("📝 리더십 원칙 기반 인터뷰 가이드 생성기 (Streaming 버전)")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("1. 리더십 원칙")
     leadership_text = st.text_area(
-        "회사 리더십 원칙을 붙여넣으세요.",
+        "📌 리더십 원칙 입력",
         value=DEFAULT_PRINCIPLES,
-        height=300,
+        height=350,
     )
 
-    # 언어 선택
     language = st.radio(
-        "인터뷰 가이드 언어 선택",
+        "🌐 출력 언어 선택",
         ["한국어", "English"],
         index=0,
         horizontal=True,
     )
 
 with col2:
-    st.subheader("2. 이력서 업로드")
     resume_file = st.file_uploader(
-        "PDF 또는 텍스트 파일을 올리세요.",
+        "📄 이력서 업로드 (PDF / TXT)",
         type=["pdf", "txt"],
     )
     if resume_file:
-        st.caption(f"업로드된 파일: {resume_file.name}")
+        st.caption(f"파일 업로드됨: {resume_file.name}")
+
 
 st.divider()
 
-if st.button("🚀 인터뷰 가이드 생성하기", type="secondary"):
+generate = st.button("🚀 인터뷰 가이드 생성하기", type="primary")
+
+if generate:
     if not leadership_text.strip():
-        st.error("리더십 원칙을 입력해주세요.")
+        st.error("⚠️ 리더십 원칙을 입력해주세요.")
     elif not resume_file:
-        st.error("이력서를 업로드해주세요.")
+        st.error("⚠️ 이력서를 업로드해주세요.")
     else:
-        with st.spinner("LLM으로 인터뷰 가이드를 생성하는 중입니다..."):
-            resume_text = extract_text_from_file(resume_file)
-            if not resume_text.strip():
-                st.error("이력서 텍스트를 추출하지 못했습니다. 다른 형식으로 시도해 주세요.")
-            else:
-                guide_markdown = generate_interview_guide(
-                    leadership_text, resume_text, language
-                )
-                st.success("생성 완료!")
+        resume_text = extract_text_from_file(resume_file)
+        if not resume_text.strip():
+            st.error("이력서 텍스트 추출 실패. 다른 파일로 시도해주세요.")
+        else:
+            st.success("✨ 생성 중… 아래에서 실시간으로 확인하세요!")
 
-                st.subheader("📄 인터뷰 가이드 미리보기")
-                st.markdown(guide_markdown)
+            placeholder = st.empty()
+            full_text = ""
 
-                # 다운로드용
-                md_bytes = guide_markdown.encode("utf-8")
-                st.download_button(
-                    label="📥 Markdown 파일로 다운로드",
-                    data=md_bytes,
-                    file_name="interview_guide.md",
-                    mime="text/markdown",
-                )
+            for chunk in stream_interview_guide(leadership_text, resume_text, language):
+                delta = chunk.choices[0].delta.content or ""
+                full_text += delta
+                placeholder.markdown(full_text)
 
+            # 다운로드 버튼
+            st.download_button(
+                label="📥 인터뷰 가이드 다운로드",
+                data=full_text.encode("utf-8"),
+                file_name="interview_guide.md",
+                mime="text/markdown",
+            )
