@@ -207,7 +207,7 @@ def generate_interview_guide(leadership_text, resume_text, language):
 """
 
     response = client.chat.completions.create(
-        model="gpt-4.1",
+        model="gpt-5.2",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
