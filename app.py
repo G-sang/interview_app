@@ -205,11 +205,11 @@ def generate_interview_guide(leadership_text, resume_text, language):
 
 # --- Streamlit UI ---
 st.set_page_config(page_title="리더십 원칙 기반 인터뷰 가이드", layout="wide")
-st.title("🚀 리더십 원칙 기반 인터뷰 가이드 생성기")
+st.title("🚀 컬처핏 기반 인터뷰 가이드 생성기")
 
 st.markdown(
-    "리더십 원칙과 이력서를 기반으로, 면접관이 바로 쓸 수 있는 "
-    "**리더십별 인터뷰 질문 & 확인 포인트**를 자동 생성합니다."
+    "핵심가치과 이력서를 기반으로, 면접관이 바로 쓸 수 있는 "
+    "**항목별 인터뷰 질문 & 확인 포인트**를 자동 생성합니다."
 )
 
 col1, col2 = st.columns(2)
@@ -217,7 +217,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("1. 리더십 원칙")
     leadership_text = st.text_area(
-        "회사 리더십 원칙을 붙여넣으세요.",
+        "회사 핵심 가치을 붙여넣으세요.",
         value=DEFAULT_PRINCIPLES,
         height=300,
     )
