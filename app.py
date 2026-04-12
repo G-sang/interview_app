@@ -246,7 +246,7 @@ header[data-testid="stHeader"] {
 """
  
 # --- 기본 리더십 원칙 ---
-DEFAULT_PRINCIPLES = """Core Values
+DEFAULT_PRINCIPLES = """【Core Values】
 우리는 '최고의 EV를 만드는 Mobility AI Company'라는 목표를 위해 달려가고 있습니다. 42dot의 목표는 최고의 결과물을 만들어 내는 것이며 이것이 곧 42dot이 추구하는 가치입니다.
 
 Impact-Driven Mission-Aligned Engagement
@@ -265,7 +265,7 @@ Open Communication & Humble Leadership
 투명하게 소통하고 정보를 공유합니다. 개인이나 조직 간의 합의나 타협을 넘어 회사의 성장을 위해 필요한 경우에는 과감한 결정을 내립니다.
 
 
-42dot Leadership
+【Leadership】
 Leadership은 비전과 목표를 제시하고 구성원들을 이끌어 가는 힘입니다. 42dot의 리더는 건강한 영향력을 바탕으로 비전을 제시하고 의미 있는 성과를 만들어냅니다.
 
 Competency is Fundamental
