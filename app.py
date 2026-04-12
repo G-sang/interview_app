@@ -246,38 +246,49 @@ header[data-testid="stHeader"] {
 """
  
 # --- 기본 리더십 원칙 ---
-DEFAULT_PRINCIPLES = """
-
-Core Values
+DEFAULT_PRINCIPLES = """Core Values
 우리는 '최고의 EV를 만드는 Mobility AI Company'라는 목표를 위해 달려가고 있습니다. 42dot의 목표는 최고의 결과물을 만들어 내는 것이며 이것이 곧 42dot이 추구하는 가치입니다.
+
 Impact-Driven Mission-Aligned Engagement
 모두가 같은 목표에 집중할 때 더 큰 변화를 만들 수 있습니다. 42dot은 시장을 바꿀 수 있는 ‘공동의 목표’에 깊게 몰입합니다.
+
 Detail-Oriented Agile Execution with Grit (Passion & Perseverance)
 기술과 사업의 디테일을 이해하고 빠르게 실행합니다. 42dot은 끊임없는 집요함을 바탕으로 최고의 결과를 만들어 갑니다.
+
 Achieving Higher Through Cross-Team Execution
 함께 협업하여 큰 목표를 빠르게 성취해 갑니다. 서로의 성과를 끊임없이 연결하며 더욱 높은 수준의 결과를 만들어 냅니다.
+
 Responsible & Engaged Leadership
 리더는 팀의 누구보다 실무를 깊게 이해하고 파악합니다. 끊임없는 질문을 통해 과제를 이해하고 지원하여 결과를 창출합니다.
+
 Open Communication & Humble Leadership
 투명하게 소통하고 정보를 공유합니다. 개인이나 조직 간의 합의나 타협을 넘어 회사의 성장을 위해 필요한 경우에는 과감한 결정을 내립니다.
 
 
 42dot Leadership
 Leadership은 비전과 목표를 제시하고 구성원들을 이끌어 가는 힘입니다. 42dot의 리더는 건강한 영향력을 바탕으로 비전을 제시하고 의미 있는 성과를 만들어냅니다.
+
 Competency is Fundamental
 사업과 기술 분야에서 폭넓은 지식과 경험을 가지고 있으며 문제를 해결할 수 있는 전문성을 보유하고 있습니다.
+
 Solve Problems Through Self-Motivation
 주도적으로 회사의 자원과 시스템을 최대한 활용하여 문제를 해결합니다.
+
 Be a Team Player
 다양한 팀과 협업하여 그들의 전문성과 지식을 최대한 활용하여 제품의 시장 경쟁력을 유지합니다.
+
 Communicate with Humble Leadership
 공동의 목표와 이익을 위해 행동하여 회사의 성공을 달성합니다. 열린 의사소통을 촉진하고 아이디어를 자유롭게 공유합니다.
+
 Deliver with Agility Rather than Perfecting
 신속한 의사 결정을 통해 변화하는 상황에 대해 적절하게 대응하고, 전략과 목표를 빠르게 조정할 수 있는 능력을 갖추고 있습니다.
+
 Do the Right Thing: Company Mission-Based Attitude
 회사의 미션과 비전을 기반으로 결정을 내리고 행동합니다. 리더는 회사의 장기적인 이익과 성공을 위한 의사 결정을 합니다.
+
 Disagree Now but Align
 자신의 의견을 분명히 표현하고 필요하다면 이슈를 제기합니다. 가능한 최선의 결정이 내려질 수 있도록 돕고 결정이 내려지면 100% align 합니다.
+
 Collaborate & Communicate Transparently Beyond Team Boundaries
 조직 간 협력하고 투명하게 커뮤니케이션합니다. 이를 위해 구성원들에게 의사결정 과정을 명확하게 설명하고 공유합니다.
 """
