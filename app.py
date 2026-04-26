@@ -247,7 +247,9 @@ header[data-testid="stHeader"] {
  
 # --- 기본 리더십 원칙 ---
 DEFAULT_PRINCIPLES = """
-여기에 회사의 핵심가치 OR 리더십 원칙 OR 일하는 방식 등을 넣어주세요
+여기에 회사의 핵심가치 OR 
+리더십 원칙 OR 
+일하는 방식 등을 넣어주세요
 """
  
 # --- PDF/텍스트 추출 ---
